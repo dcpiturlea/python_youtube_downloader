@@ -1,5 +1,6 @@
 # pip install git+https://github.com/nficano/pytube.git
 from pytube import YouTube
+import  os
 
 while True:
     link = input("Introdu linkul: ")
@@ -28,4 +29,10 @@ while True:
             print("Nu a putut fi downloadat!")
     except:
         print("Nu ai introdus un link valid!")
+        try:
+            initial_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
+            os.mkdir(initial_path + '\\path')
+        except:
+            print('Error')
+
 
